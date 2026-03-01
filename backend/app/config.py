@@ -2,11 +2,12 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    database_url: str = "sqlite:///./coparenting.db"
+    database_url: str = "sqlite:///./greenlight.db"
     secret_key: str = "dev-secret-key-change-in-production"
     anthropic_api_key: str = ""
     clerk_secret_key: str = ""
     clerk_publishable_key: str = ""
+    access_token_expire_minutes: int = 60 * 24
 
     model_config = {"env_file": ".env"}
 

@@ -9,9 +9,10 @@ import TeamSettingsModal from '../components/TeamSettingsModal';
 
 interface Props {
   user: User;
+  onDevSignOut?: () => void;
 }
 
-export default function DashboardPage({ user }: Props) {
+export default function DashboardPage({ user, onDevSignOut }: Props) {
   const [challenges, setChallenges] = useState<Challenge[]>([]);
   const [showCreate, setShowCreate] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -80,7 +81,16 @@ export default function DashboardPage({ user }: Props) {
               </button>
             )}
             <span className="text-sm text-slate-300">{user.name}</span>
-            <UserButton />
+            {onDevSignOut ? (
+              <button
+                onClick={onDevSignOut}
+                className="px-3 py-1 text-xs text-slate-400 hover:text-white border border-slate-700 rounded-md hover:bg-slate-800 transition-colors"
+              >
+                Switch User
+              </button>
+            ) : (
+              <UserButton />
+            )}
           </div>
         </div>
       </header>

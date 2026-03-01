@@ -8,6 +8,7 @@ from sqlmodel import Session, select
 from app.database import get_session
 from app.models.user import User
 from app.models.group import PendingTeamInvite, TeamMember, GroupRole
+from app.services.auth import decode_access_token
 from app.services.clerk_auth import verify_clerk_token, get_clerk_user_info
 
 logger = logging.getLogger(__name__)
@@ -19,6 +20,14 @@ def get_current_user(
     session: Annotated[Session, Depends(get_session)],
 ) -> User:
     token = credentials.credentials
+
+    # Try dev JWT first (local dev only)
+    dev_user_id = decode_access_token(token)
+    if dev_user_id is not None:
+        user = session.get(User, dev_user_id)
+        if user:
+            return user
+
     payload = verify_clerk_token(token)
     if payload is None:
         raise HTTPException(
