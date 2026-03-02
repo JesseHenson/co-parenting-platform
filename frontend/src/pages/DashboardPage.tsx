@@ -6,6 +6,7 @@ import ChallengeCard from '../components/ChallengeCard';
 import CreateChallengeModal from '../components/CreateChallengeModal';
 import TeamSetup from '../components/TeamSetup';
 import TeamSettingsModal from '../components/TeamSettingsModal';
+import WelcomePage from './WelcomePage';
 
 interface Props {
   user: User;
@@ -19,6 +20,7 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
   const [team, setTeam] = useState<Team | null>(null);
   const [teamLoading, setTeamLoading] = useState(true);
   const [showTeamSettings, setShowTeamSettings] = useState(false);
+  const [skippedOnboarding, setSkippedOnboarding] = useState(false);
 
   const fetchChallenges = async () => {
     try {
@@ -53,6 +55,16 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
       // ignore
     }
   };
+
+  // Show full-screen welcome for first-time users (no team yet)
+  if (!teamLoading && !team && !skippedOnboarding) {
+    return (
+      <WelcomePage
+        onComplete={(t) => setTeam(t)}
+        onSkip={() => setSkippedOnboarding(true)}
+      />
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50">
