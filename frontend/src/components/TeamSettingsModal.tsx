@@ -83,8 +83,8 @@ export default function TeamSettingsModal({ team, onClose, onTeamUpdated }: Prop
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl border border-slate-200/60 max-w-md w-full p-6 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 bg-slate-900/60 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
+      <div className="bg-white rounded-t-xl sm:rounded-xl shadow-xl border border-slate-200/60 max-w-md w-full p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-lg font-semibold text-slate-900">Team Settings</h2>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 text-xl leading-none transition-colors">&times;</button>

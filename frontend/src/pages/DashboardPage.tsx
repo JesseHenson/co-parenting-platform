@@ -71,14 +71,14 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
       <header className="bg-slate-900">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <h1 className="text-lg font-semibold text-white tracking-tight">Greenlight</h1>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             {team && (
               <button
                 onClick={() => setShowTeamSettings(true)}
                 className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-800 transition-colors"
                 title="Team settings"
               >
-                <span className="text-xs text-slate-400 uppercase tracking-wide">{team.name || 'Team'}</span>
+                <span className="hidden sm:inline text-xs text-slate-400 uppercase tracking-wide">{team.name || 'Team'}</span>
                 <div className="flex -space-x-2">
                   {team.members.map((m) => (
                     <div
@@ -92,7 +92,7 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
                 </div>
               </button>
             )}
-            <span className="text-sm text-slate-300">{user.name}</span>
+            <span className="hidden sm:inline text-sm text-slate-300">{user.name}</span>
             {onDevSignOut ? (
               <button
                 onClick={onDevSignOut}
@@ -107,7 +107,7 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 py-8">
+      <main className="max-w-5xl mx-auto px-4 py-6 sm:py-8">
         {!teamLoading && !team && (
           <TeamSetup onTeamCreated={(t) => setTeam(t)} />
         )}

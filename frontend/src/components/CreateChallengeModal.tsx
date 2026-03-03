@@ -33,8 +33,8 @@ export default function CreateChallengeModal({ groupId, onCreated, onClose }: Pr
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/60 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-xl shadow-xl border border-slate-200/60 max-w-lg w-full p-6">
+    <div className="fixed inset-0 bg-slate-900/60 flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
+      <div className="bg-white rounded-t-xl sm:rounded-xl shadow-xl border border-slate-200/60 max-w-lg w-full p-5 sm:p-6 max-h-[90vh] overflow-y-auto">
         <h2 className="text-xl font-semibold text-slate-900 mb-4">New Challenge</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           {error && (
