@@ -21,7 +21,6 @@ export function useChallengeEvents(
   useEffect(() => {
     if (!challengeId) return;
 
-    let eventSource: EventSource | null = null;
     let cancelled = false;
 
     async function connect() {
