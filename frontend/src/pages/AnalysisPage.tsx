@@ -78,15 +78,15 @@ export default function AnalysisPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="bg-slate-900">
-        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-4">
-          <Link to="/" className="text-slate-400 hover:text-white transition-colors">
-            &larr; Dashboard
+        <div className="max-w-5xl mx-auto px-4 py-4 flex items-center gap-3 sm:gap-4">
+          <Link to="/" className="text-slate-400 hover:text-white transition-colors shrink-0">
+            &larr; <span className="hidden sm:inline">Dashboard</span>
           </Link>
-          <h1 className="text-lg font-semibold text-white tracking-tight">{challenge.title} — Analysis</h1>
+          <h1 className="text-base sm:text-lg font-semibold text-white tracking-tight truncate">{challenge.title} — Analysis</h1>
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-4 py-8 space-y-6">
+      <main className="max-w-5xl mx-auto px-4 py-6 sm:py-8 space-y-4 sm:space-y-6">
         {isInProgress && (
           <AnalysisProgress challengeId={challenge.id} onComplete={reload} />
         )}

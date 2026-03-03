@@ -76,19 +76,17 @@ export default function AnalysisPanel({ idea }: Props) {
     <div className="bg-white border border-slate-200/60 rounded-lg shadow-sm overflow-hidden">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="w-full px-4 py-3 flex items-center justify-between hover:bg-slate-50 transition-colors"
+        className="w-full px-4 py-3 flex items-start sm:items-center justify-between gap-2 hover:bg-slate-50 transition-colors"
       >
-        <div className="flex items-center gap-3">
-          <span className="text-slate-800 font-medium text-left">{idea.content}</span>
-        </div>
-        <div className="flex items-center gap-2">
+        <span className="text-slate-800 font-medium text-left flex-1">{idea.content}</span>
+        <div className="flex items-center gap-2 shrink-0">
           {feasibilityData && (
-            <span className="text-xs px-2 py-1 bg-sky-50 text-sky-700 rounded">
+            <span className="hidden sm:inline text-xs px-2 py-1 bg-sky-50 text-sky-700 rounded">
               Feasibility: {feasibilityData.score}/10
             </span>
           )}
           {impactData && (
-            <span className="text-xs px-2 py-1 bg-indigo-50 text-indigo-700 rounded">
+            <span className="hidden sm:inline text-xs px-2 py-1 bg-indigo-50 text-indigo-700 rounded">
               Impact: {impactData.score}/10
             </span>
           )}

@@ -43,7 +43,6 @@ services:
       - frontend_node_modules:/app/node_modules
     environment:
       - VITE_CLERK_PUBLISHABLE_KEY=${VITE_CLERK_PUBLISHABLE_KEY:-pk_test_ZW5vdWdoLW1hbGFtdXRlLTM4LmNsZXJrLmFjY291bnRzLmRldiQ}
-      - VITE_LOCAL_DEV=true
     depends_on:
       - backend
     networks:
