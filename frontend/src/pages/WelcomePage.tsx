@@ -52,7 +52,7 @@ export default function WelcomePage({ onComplete, onSkip }: Props) {
       <div className="max-w-2xl w-full py-12">
         {/* Welcome header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Welcome to Greenlight</h1>
+          <h1 className="text-3xl font-bold text-slate-900 tracking-tight">Welcome to CommonGround</h1>
           <p className="mt-3 text-lg text-slate-600">
             A structured space for teams to work through decisions together — fairly, calmly, and with AI support.
           </p>

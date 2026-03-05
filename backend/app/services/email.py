@@ -8,7 +8,7 @@ from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-FROM_ADDRESS = "Greenlight <notifications@propelai.solutions>"
+FROM_ADDRESS = "CommonGround <notifications@propelai.solutions>"
 
 
 def send_email(to: str | list[str], subject: str, html: str, text: str) -> bool:
@@ -51,12 +51,12 @@ _HEADER = """\
 <tr><td align="center">
 <table width="480" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
 <tr><td style="background:#059669;padding:24px 32px;">
-  <span style="color:#ffffff;font-size:20px;font-weight:700;">Greenlight</span>
+  <span style="color:#ffffff;font-size:20px;font-weight:700;">CommonGround</span>
 </td></tr>"""
 
 _FOOTER = """\
 <tr><td style="padding:16px 32px;border-top:1px solid #e5e7eb;">
-  <p style="margin:0;color:#9ca3af;font-size:12px;">This is an automated notification from Greenlight.</p>
+  <p style="margin:0;color:#9ca3af;font-size:12px;">This is an automated notification from CommonGround.</p>
 </td></tr>
 </table>
 </td></tr></table>
@@ -76,7 +76,7 @@ def send_waitlist_notification(name: str, email: str, created_at_str: str):
     html = _wrap(f"""\
 <tr><td style="padding:32px;">
   <h1 style="margin:0 0 8px;font-size:22px;color:#111827;">New Waitlist Signup</h1>
-  <p style="margin:0 0 24px;color:#6b7280;font-size:14px;">Someone just joined the Greenlight waitlist.</p>
+  <p style="margin:0 0 24px;color:#6b7280;font-size:14px;">Someone just joined the CommonGround waitlist.</p>
   <table width="100%" cellpadding="0" cellspacing="0" style="background:#f9fafb;border-radius:8px;">
     <tr><td style="padding:8px 20px;">
       <span style="color:#6b7280;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;">Name</span><br/>
@@ -110,10 +110,10 @@ def send_team_invite_email(
   <h1 style="margin:0 0 8px;font-size:22px;color:#111827;">You're Invited!</h1>
   <p style="margin:0 0 24px;color:#6b7280;font-size:15px;">
     <strong>{inviter_name}</strong> invited you to join the team
-    <strong>{team_name or "their team"}</strong> on Greenlight.
+    <strong>{team_name or "their team"}</strong> on CommonGround.
   </p>
   <p style="margin:0 0 24px;color:#6b7280;font-size:14px;">
-    Greenlight helps teams brainstorm ideas and get AI-powered analysis —
+    CommonGround helps teams brainstorm ideas and get AI-powered analysis —
     so everyone's voice is heard.
   </p>
   <table cellpadding="0" cellspacing="0">
@@ -125,10 +125,10 @@ def send_team_invite_email(
   </table>
 </td></tr>""")
     text = (
-        f"{inviter_name} invited you to join {team_name or 'their team'} on Greenlight.\n\n"
+        f"{inviter_name} invited you to join {team_name or 'their team'} on CommonGround.\n\n"
         f"Sign up here: {app_url}"
     )
-    send_email(to_email, f"{inviter_name} invited you to Greenlight", html, text)
+    send_email(to_email, f"{inviter_name} invited you to CommonGround", html, text)
 
 
 # --- Analysis complete email (to all collaborators) ---

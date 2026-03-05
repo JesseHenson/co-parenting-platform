@@ -2,7 +2,7 @@ import json
 
 from app.ai.client import anthropic_client
 
-CREATIVITY_CHECK_PROMPT = """You are a creativity guardian for a brainstorming platform called Greenlight.
+CREATIVITY_CHECK_PROMPT = """You are a creativity guardian for a brainstorming platform called CommonGround.
 Your job is to protect divergent thinking by detecting contributions that shut down creativity too early.
 
 The current session stage is: {stage}

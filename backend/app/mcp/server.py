@@ -7,7 +7,7 @@ from app.models.idea import Idea
 from app.models.problem import Challenge
 from app.models.session import GreenlightSession
 
-mcp = FastMCP("Greenlight")
+mcp = FastMCP("CommonGround")
 
 
 @mcp.tool()

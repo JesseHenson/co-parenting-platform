@@ -26,7 +26,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Greenlight", lifespan=lifespan)
+app = FastAPI(title="CommonGround", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

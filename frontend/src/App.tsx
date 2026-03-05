@@ -19,9 +19,9 @@ import AnalysisPage from './pages/AnalysisPage';
 const IS_DEV = import.meta.env.DEV;
 
 const DEMO_USERS = [
-  { name: 'Alex Chen', initials: 'AC', email: 'alex@greenlight-test.com', color: 'bg-sky-500' },
-  { name: 'Jordan Lee', initials: 'JL', email: 'jordan@greenlight-test.com', color: 'bg-amber-500' },
-  { name: 'Sam Rivera', initials: 'SR', email: 'sam@greenlight-test.com', color: 'bg-indigo-500' },
+  { name: 'Alex Chen', initials: 'AC', email: 'alex@commonground-test.com', color: 'bg-sky-500' },
+  { name: 'Jordan Lee', initials: 'JL', email: 'jordan@commonground-test.com', color: 'bg-amber-500' },
+  { name: 'Sam Rivera', initials: 'SR', email: 'sam@commonground-test.com', color: 'bg-indigo-500' },
 ];
 
 function AuthenticatedApp({ user, onSignOut }: { user: User; onSignOut?: () => void }) {
@@ -109,7 +109,7 @@ function SignInPage({ onDevLogin }: { onDevLogin?: (email: string) => void }) {
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-4">
       <div className="max-w-md w-full space-y-8 text-center">
         <div>
-          <h1 className="text-3xl font-semibold text-slate-900 tracking-tight">Greenlight</h1>
+          <h1 className="text-3xl font-semibold text-slate-900 tracking-tight">CommonGround</h1>
           <p className="mt-2 text-slate-500">Sign in to brainstorm with your team</p>
         </div>
         <div className="bg-white p-8 rounded-xl shadow-lg border border-slate-200/60 space-y-4">

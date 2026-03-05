@@ -71,7 +71,7 @@ export default function DashboardPage({ user, onDevSignOut }: Props) {
     <div className="min-h-screen bg-slate-50">
       <header className="bg-slate-900">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <h1 className="text-lg font-semibold text-white tracking-tight">Greenlight</h1>
+          <h1 className="text-lg font-semibold text-white tracking-tight">CommonGround</h1>
           <div className="flex items-center gap-2 sm:gap-4">
             {team && (
               <button
